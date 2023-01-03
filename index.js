@@ -17,24 +17,26 @@ const app = express();
 // app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "*",
-  })
-);
 // app.use(
 //   cors({
-//     origin: [
-//       "http://localhost:3000",
-//       "http://localhost:3001",
-//       "http://localhost:5000",
-//       "http://localhost:5173",
-//       "https://servey-densovan.vercel.app",
-//       "https://servey.vercel.app",
-//     ],
+//     origin: "*",
 //     credentials: true,
+//     allowedHeaders: true,
 //   })
 // );
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://localhost:5000",
+      "http://localhost:5173",
+      "https://servey-densovan.vercel.app",
+      "https://servey.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => {
   res.json({ msg: "Hello world" });
