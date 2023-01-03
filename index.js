@@ -24,6 +24,8 @@ app.use(
       "http://localhost:3001",
       "http://localhost:5000",
       "http://localhost:5173",
+      "https://servey-densovan.vercel.app",
+      "https://servey.vercel.app",
     ],
     credentials: true,
   })
